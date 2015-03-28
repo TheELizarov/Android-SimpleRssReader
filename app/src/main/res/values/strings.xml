@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rss-ка</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_dashboard_rss_list">Новости</string>
+    <string name="list_empty">Список пуст</string>
+    <string name="title_sync_interval">ВРЕМЯ СИНХРОНИЗАЦИИ</string>
+    <string name="hint_sync_interval">введите количество минут</string>
+    <string name="title_list">ДОСТУПНЫЕ RSS КАНАЛЫ</string>
+    <string name="wraning_wrong_sync_inteval">Интервал синхронизации не может быть меньше %s минут</string>
+    <string name="close">Продолжить</string>
+    <string name="change">Изменить</string>
+    <string name="empty_rss_chanel_list">Список rss каналов пуст</string>
+    <string name="empty_list">Список пуст</string>
+    <string name="error_loading" formatted="false">Произошла ошибка: %s</string>
+    <string name="refresh_news">Обновление новостной ленты</string>
+    <string name="empty_rss_new_list">Список новостей пуст</string>
+    <string name="updating_news_list">Подготавливаем список новостей..</string>
+    <string name="available_new_rss">Свежие новости</string>
+    <string name="title_notify" formatted="false">%s нов. доступны для чтения</string>
+    <string name="subtitle_notify">Нажмите, чтобы посомтреть</string>
+    <string name="error_internet_not_connected">Отсутствует подключение к интернету, проверьте настройки</string>
+    <string name="error_connecting_message">Отсутствует подключение к интернету, проверьте настройки</string>
+    <string name="title_rss_list" formatted="false">%s: %s</string>
+</resources>
