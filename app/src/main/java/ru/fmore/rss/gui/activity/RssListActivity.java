@@ -69,7 +69,8 @@ public class RssListActivity extends AbstractActivity implements LoaderManager.L
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         Chanel chanel = SettingsManager.getSelectedChanel(this);
-        return new CursorLoader(this, Db.URI_RSS,
+        return new CursorLoader(this,
+                Db.URI_RSS,
                 null,
                 Db.Rss.CHANEL_ID + "=?",
                 new String[] {String.valueOf(chanel.getId())},
@@ -123,7 +124,7 @@ public class RssListActivity extends AbstractActivity implements LoaderManager.L
     }
 
     private void refreshRss(Cursor cursor) {
-        adapter.swapCursor(cursor);
+        adapter.changeCursor(cursor);
         adapter.notifyDataSetChanged();
     }
 
@@ -156,7 +157,7 @@ public class RssListActivity extends AbstractActivity implements LoaderManager.L
                             }
                             hideProgress();
                             ptr.setRefreshComplete();
-                            getSupportLoaderManager().restartLoader(LOADER_ID, null, RssListActivity.this);
+                            getSupportLoaderManager().initLoader(LOADER_ID, null, RssListActivity.this);
                         } catch (Exception ignored) {
                         }
                     }

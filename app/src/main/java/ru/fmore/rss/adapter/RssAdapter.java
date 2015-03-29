@@ -56,7 +56,7 @@ public class RssAdapter extends CursorAdapter {
         vh.title.setText(rss.getTitle());
         vh.description.setText(rss.getDescription());
         if (getItemViewType(cursor.getPosition()) == HEADER) {
-            vh.header.setText(sdf.format(new Date(rss.getCreated())));
+            vh.header.setText(sdf.format(new Date(rss.getPubDate())));
         }
         int color = rss.isViewed() ? R.color.gray_alpha_90 : android.R.color.transparent;
         vh.item.setBackgroundColor(context.getResources().getColor(color));
@@ -76,7 +76,7 @@ public class RssAdapter extends CursorAdapter {
             getCursor().moveToPrevious();
             Rss prev = new Rss(getCursor());
             getCursor().moveToPosition(position);
-            if (current.compareByDate(prev)) {
+            if (current.compareByPubDate(prev)) {
                 result = ROW;
             }
         }

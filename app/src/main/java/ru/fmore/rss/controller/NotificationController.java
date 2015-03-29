@@ -29,7 +29,6 @@ public abstract class NotificationController {
         NotificationManager mNotificationManager = (NotificationManager)
                 context.getSystemService(Context.NOTIFICATION_SERVICE);
 
-
         Intent intent = RssListActivity.getStartIntentForViewingRss(context);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);

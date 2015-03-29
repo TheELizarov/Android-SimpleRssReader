@@ -163,10 +163,10 @@ public class Rss implements Serializable {
         return this;
     }
 
-    public boolean compareByDate(Rss other) {
+    public boolean compareByPubDate(Rss other) {
         boolean result = false;
         if (other != null) {
-            result = compareToDay(created, other.created);
+            result = compareToDay(pubDate, other.pubDate);
         }
         return result;
     }
