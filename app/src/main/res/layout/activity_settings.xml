@@ -1,42 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
-    <TextView
-        android:id="@+id/titleSyncInterval"
+    android:orientation="vertical">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:text="@string/title_sync_interval"
-        android:textSize="18sp"
-        android:textColor="@color/blue_alpha_30"/>
-    <EditText
-        android:id="@+id/syncInterval"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titleSyncInterval"
-        android:inputType="numberSigned"
-        android:hint="@string/hint_sync_interval"/>
-    <TextView
-        android:id="@+id/titleList"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:layout_below="@id/syncInterval"
-        android:text="@string/title_list"
-        android:textSize="18sp"
-        android:textColor="@color/blue_alpha_30"
-        android:layout_marginTop="10dp"/>
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/titleList"
-        android:listSelector="@android:color/transparent"/>
-    <TextView
-        android:id="@android:id/empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/empty_rss_chanel_list"/>
-</RelativeLayout>
+        >
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            />
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+        <TextView
+            android:id="@+id/titleSyncInterval"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_sync_interval"
+            android:textColor="@color/blue_alpha_30"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/syncInterval"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleSyncInterval"
+            android:hint="@string/hint_sync_interval"
+            android:inputType="numberSigned"/>
+
+        <TextView
+            android:id="@+id/titleList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/syncInterval"
+            android:layout_marginTop="10dp"
+            android:text="@string/title_list"
+            android:textColor="@color/blue_alpha_30"
+            android:textSize="18sp"/>
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/titleList"
+            android:layout_marginTop="10dp"
+            android:listSelector="@android:color/transparent"/>
+
+        <TextView
+            android:id="@android:id/empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/empty_rss_chanel_list"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.fmore.rss" >
+    package="ua.motofun.rss" >
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
@@ -11,10 +13,9 @@
         android:allowBackup="true"
         android:icon="@drawable/rss"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".gui.activity.SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name="ua.motofun.rss.gui.activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,36 +24,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".gui.activity.DashboardActivity"
+            android:name="ua.motofun.rss.gui.activity.DashboardActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".gui.activity.RssListActivity"
+            android:name="ua.motofun.rss.gui.activity.RssListActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".gui.activity.DashboardActivity"/>
+                android:value="ua.motofun.rss.gui.activity.DashboardActivity"/>
         </activity>
         <activity
-            android:name=".gui.activity.RssDetailsActivity"
+            android:name="ua.motofun.rss.gui.activity.RssDetailsActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".gui.activity.SettingsActivity"
+            android:name="ua.motofun.rss.gui.activity.SettingsActivity"
             android:label="@string/title_settings"
             android:screenOrientation="portrait"/>
         <receiver android:process=":remote"
-            android:name=".receiver.RefreshRssReceiver">
+            android:name="ua.motofun.rss.receiver.RefreshRssReceiver">
         </receiver>
         <receiver android:process=":remote"
-            android:name=".receiver.BootCompletedReceiver">
+            android:name="ua.motofun.rss.receiver.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
         <provider
-            android:name=".db.DBProvider"
-            android:authorities="ru.fmore.rss.dbprovider"
-            android:exported="false"/>
+            android:name="ua.motofun.rss.db.DBProvider"
+            android:authorities="ua.motofun.rss.dbprovider"
+            android:exported="true"/>
     </application>
 
 </manifest>

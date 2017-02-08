@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Rss-ка</string>
-    <string name="title_settings">Настройки</string>
-    <string name="title_dashboard_rss_list">Новости</string>
+    <string name="app_name">Motofun</string>
+    <string name="title_settings">Наш магазин</string>
+    <string name="title_dashboard_rss_list">Акции и скидки</string>
     <string name="list_empty">Список пуст</string>
     <string name="title_sync_interval">ВРЕМЯ СИНХРОНИЗАЦИИ</string>
     <string name="hint_sync_interval">введите количество минут</string>
@@ -22,4 +22,7 @@
     <string name="error_internet_not_connected">Отсутствует подключение к интернету, проверьте настройки</string>
     <string name="error_connecting_message">Отсутствует подключение к интернету, проверьте настройки</string>
     <string name="title_rss_list" formatted="false">%s: %s</string>
+    <string name="share">Отправить эту ссылку</string>
+    <string name="extra_more">Зайти в каталог</string>
+    <string name="phone">Позвонить нам</string>
 </resources>

@@ -96,4 +96,10 @@
     <color name="black_alpha_80">#34000000</color>
     <color name="black_alpha_90">#1A000000</color>
 
+    <color name="PrimaryColor">#0277BD</color>
+    <color name="PrimaryDarkColor">#01579B</color>
+    <color name="window_background">#FFF5F5F5</color>
+
+    <color name="viewed_item_background">@color/gray_alpha_90</color>
+    <color name="item_background">@android:color/transparent</color>
 </resources>
