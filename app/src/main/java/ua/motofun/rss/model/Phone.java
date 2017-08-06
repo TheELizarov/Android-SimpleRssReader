@@ -24,10 +24,10 @@ public class Phone implements Serializable {
 
     public static List<Phone> getPhones() {
         List<Phone> result = new ArrayList<>();
-        result.add(new Phone("0637611944", "Владимир","Продажи, консультация по ремонту"));
-        result.add(new Phone("0672311110", "Сергей", "Продажи, консультация по прошивке"));
-        result.add(new Phone("0501726262", "Владислав", "Продажи"));
-        result.add(new Phone("0978215798", "Сергей", "Прошивка, разработка ПО"));
+        result.add(new Phone("+380976400200", "Влад","Продажи, консультация по ремонту"));
+        result.add(new Phone("+380739770870", "Сергей", "Продажи, консультация по прошивке"));
+        result.add(new Phone("+380667636476", "Владислав", "Продажи"));
+        result.add(new Phone("89587568696", "Сергей", "Прошивка, разработка ПО"));
         return result;
     }
 
@@ -67,8 +67,8 @@ public class Phone implements Serializable {
             TextView subtitle = (TextView) convertView.findViewById(R.id.subtitle);
             title.setTypeface(TypefaceUtils.getRobotoRegular(getContext()));
             subtitle.setTypeface(TypefaceUtils.getRobotoLight(getContext()));
-            title.setText(phone.getNumber() + " (" + phone.getTitle() + ")");
-            subtitle.setText(phone.getDescription());
+            title.setText(phone.getNumber());
+//            subtitle.setText(phone.getDescription());
             return convertView;
         }
     }

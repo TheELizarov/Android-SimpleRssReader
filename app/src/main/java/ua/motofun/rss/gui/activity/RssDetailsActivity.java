@@ -81,16 +81,51 @@ public class RssDetailsActivity extends AbstractAppCompatActivity {
         builder.setAdapter(Phone.getAdapter(this), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                try {
-                    Phone phone = Phone.getPhones().get(i);
-                    Intent intent = new Intent(Intent.ACTION_DIAL);
-                    intent.setData(Uri.parse("tel:" + phone.getNumber()));
-                    startActivity(intent);
-                }  catch (Exception ignored) {
-                    Toast.makeText(RssDetailsActivity.this, "Не удается позвонить", Toast.LENGTH_SHORT).show();
-                }
+                Phone phone = Phone.getPhones().get(i);
+                chooseCommand(phone);
             }
         });
         builder.show();
+    }
+
+    private void chooseCommand(final Phone phone) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Выберите действие")
+                .setNegativeButton("СМС", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        sms(phone);
+                    }
+                })
+                .setPositiveButton("Позвонить", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        call(phone);
+                    }
+                })
+                .show();
+    }
+
+    private void call(Phone phone) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + phone.getNumber()));
+            startActivity(intent);
+        }  catch (Exception ignored) {
+            Toast.makeText(RssDetailsActivity.this, "Не удается позвонить", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void sms(Phone phone) {
+        try {
+            String url = rss.getLink().replace("\t", "").replace("\n", "");
+            Intent smsIntent = new Intent(Intent.ACTION_VIEW);
+            smsIntent.setType("vnd.android-dir/mms-sms");
+            smsIntent.putExtra("address", phone.getNumber());
+            smsIntent.putExtra("sms_body","Прошу связаться со мной  по поводу " + rss.getTitle() + " " + url);
+            startActivity(smsIntent);
+        } catch (Exception ignoed) {
+            Toast.makeText(RssDetailsActivity.this, "Не удается отправить СМС", Toast.LENGTH_SHORT).show();
+        }
     }
 }
